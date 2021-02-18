@@ -17,7 +17,6 @@ Education
 Academic Appointments
 ======
 * 2013-2016: Postdoctoral researcher, Microsoft Research Station Q
-
 * 2017-present: Assistant professor, Department of Physics, Yale University
   
 
