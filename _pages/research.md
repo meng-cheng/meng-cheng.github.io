@@ -7,5 +7,5 @@ author_profile: true
 
 {% include base_path %}
 
-Fractonic topological phases
+## Fractonic topological phases
 
