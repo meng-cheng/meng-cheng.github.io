@@ -7,5 +7,8 @@ author_profile: true
 
 {% include base_path %}
 
-## Fractonic topological phases
+### Quantum criticality
 
+### Fractonic phases
+
+### Symmetric topological phases
