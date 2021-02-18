@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: "Meng Cheng's homepage"
+title: "Welcome"
 excerpt: "About me"
 author_profile: true
 redirect_from: 
