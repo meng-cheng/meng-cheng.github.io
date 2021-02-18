@@ -7,3 +7,5 @@ redirect_from:
   - /research/
   - /research.html
 ---
+
+{% include base_path %}
