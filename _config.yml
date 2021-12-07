@@ -82,7 +82,7 @@ analytics:
 author:
   name             : "Meng Cheng"
   avatar           : "profile.png"
-  bio              : "Theoretical physicist"
+  bio              : "condensed matter theorist"
   location         : "New Haven, CT"
   employer         :
   #pubmed           : "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
@@ -109,7 +109,7 @@ author:
   stackoverflow    : # http://stackoverflow.com/users/123456/username
   steam            :
   tumblr           :
-  twitter          : "dualm"
+  #twitter          : 
   vine             :
   weibo            :
   xing             :
