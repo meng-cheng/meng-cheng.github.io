@@ -12,7 +12,8 @@ redirect_from:
 Academic Appointments
 ======
 * 2013-2016: Postdoctoral researcher, Microsoft Research Station Q
-* 2017-present: Assistant professor, Department of Physics, Yale University
+* 2017-2024: Assistant professor, Department of Physics, Yale University
+* 2025-present: Associate professor, Department of Physics, Yale University
 
 Education
 ======
