@@ -7,7 +7,7 @@ tags:
   - math
 ---
 
-It was noted that in general the homomorphism from $\mathcal{H}^d(BG, \mathrm{U}(1))$ and $\Omega^{\rm SO}(BG)$ is neither surjective nor injective. That is, on one hand there are "beyond group-cohomology" SPT phases, which exist in $d=4$ for $G=\mathbb{Z}_2^{\mathsf{T}}$ (anti-unitary $\mathbb{Z}_2$), and $d=5$ for $G=\mathbb{Z}_2$. On the other hand, the map can have nontrivial kernel: a nontrivial element of $\mathcal{H}^d(BG, \mathrm{U}(1))$ may actually correspond to a trivial SPT phase. The latter phenomenon only occurs for $d\geq 7$, and the simplest group is $G=\mathbb{Z}_3\times \mathbb{Z}_3$.
+It was noted in [arXiv:1403.1467](https://arxiv.org/abs/1403.1467) that in general the homomorphism from $\mathcal{H}^d(BG, \mathrm{U}(1))$ and $\Omega^{\rm SO}(BG)$ is neither surjective nor injective. That is, on one hand there are "beyond group-cohomology" SPT phases, which exist in $d=4$ for $G=\mathbb{Z}_2^{\mathsf{T}}$ (anti-unitary $\mathbb{Z}_2$), and $d=5$ for $G=\mathbb{Z}_2$. On the other hand, the map can have nontrivial kernel: a nontrivial element of $\mathcal{H}^d(BG, \mathrm{U}(1))$ may actually correspond to a trivial SPT phase. The latter phenomenon only occurs for $d\geq 7$, and the simplest group is $G=\mathbb{Z}_3\times \mathbb{Z}_3$.
 
 In this note we give a physical explanation of the minimal example with $G=\mathbb{Z}_3\times \mathbb{Z}_3$ in $d=7$.
 
