@@ -18,7 +18,7 @@ $$E_2^{p,q}=\mathcal{H}^p(G, \Omega^{\rm SO}_q(BA)),$$
 
 where $p,q$ are non-negative integers and $p+q=d$.
 
-For the computation of $\Omega^{\mathrm{SO}(BG)$, we can just set $A=1$. The groups of invertible phases in low dimensions
+For the computation of $\Omega^{\mathrm{SO}}(BG)$, we can just set $A=1$. The groups of invertible phases in low dimensions
 
 $$\begin{aligned}
     \Omega^{\rm SO}_1 &=\mathbb{Z}_1,\\ \Omega^{\rm SO}_2 &=\mathbb{Z}_1,\\ \Omega^{\rm SO}_3&=\mathbb{Z},\\
@@ -36,7 +36,7 @@ $$\mathcal{H}^7(\mathbb{Z}_3\times \mathbb{Z}_3, \mathrm{U}(1))=\mathbb{Z}_3^3.$
 
 Here one of the $\mathbb{Z}_3$ factor is given by $\mathcal{H}^2(\mathbb{Z}_3, \mathcal{H}^5(\mathbb{Z}_3,\mathrm{U}(1)))$.
 
-Now we compute $\mathcal{H}^2(\mathbb{Z}_3, \Omega^{\rm SO}_5(\mathbb{Z}_3))$.
+Now we compute the corresponding term in the AHSS of cobordism: $\mathcal{H}^2(\mathbb{Z}_3, \Omega^{\rm SO}_5(\mathbb{Z}_3))$.
 
 First, we need to find $\Omega^{\rm SO}_5(\mathbb{Z}_3)$. We again use the AHSS. The nontrivial terms on the $E_2$ page has
 
@@ -57,3 +57,5 @@ It is instructive to write down the cocycles explicitly. Denote the elements of 
 $$\omega(a,b)=x^{n\frac{a+b-[a+b]_3}{3}}.$$
 
 where we can take $n=0,1,2$. If $n=3$, $x^3$ is the generator of the group-cohomology SPTs, and $\omega(a,b)$ is a coboundary.
+
+So the key fact is the nontrivial extension of $\mathbb{Z}_3$ SPTs in 5 dimensions. It can be further traced back to the following remarkable fact: take three copies of $(E_8)_1$ chiral CFTs. The $\mathbb{Z}_3$ cyclic permutation symmetry has a nontrivial 't Hooft anomaly.
