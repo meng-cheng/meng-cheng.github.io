@@ -18,11 +18,12 @@ $$E_2^{p,q}=\mathcal{H}^p(G, h^q(BA)),$$
 
 where $p,q$ are non-negative integers and $p+q=d$.
 
-For the computation of $h^d(BG)$, we can just set $A=1$. The relevant groups of invertible phases in low dimensions up to $d=4$:
+For the computation of $h^d(BG)$, we can just set $A=1$. The relevant groups of invertible phases in low dimensions up to $d=5$:
 
 $$\begin{aligned}
     h^1 &=\mathbb{Z}_1,\\ h^2 &=\mathbb{Z}_1,\\ h^3&=\mathbb{Z},\\
-    h^4&=\mathbb{Z}_1, h^5&=\mathbb{Z}_2\\
+    h^4&=\mathbb{Z}_1,\\
+    h^5&=\mathbb{Z}_2.
 \end{aligned}$$
 
 There is a similar spectral sequence (London-Hochschild-Serre) for group cohomology, with the $E_2$ page given by
