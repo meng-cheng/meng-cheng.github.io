@@ -1,5 +1,5 @@
 ---
-title: "Template Note"
+title: "Trivializing group cohomology SPT phases"
 date: 2026-02-26
 permalink: /posts/2026/02/template-note/
 tags:
@@ -7,18 +7,54 @@ tags:
   - math
 ---
 
-This is a template note showing how to write posts with LaTeX math.
+It was noted that in general the homomorphism from $\mathcal{H}^d(BG, \mathrm{U}(1))$ and $\Omega^{\rm SO}(BG)$ is neither surjective nor injective. That is, on one hand there are "beyond group-cohomology" SPT phases, which exist in $d=4$ for $G=\mathbb{Z}_2^{\mathsf{T}}$ (anti-unitary $\mathbb{Z}_2$), and $d=5$ for $G=\mathbb{Z}_2$. On the other hand, the map can have nontrivial kernel: a nontrivial element of $\mathcal{H}^d(BG, \mathrm{U}(1))$ may actually correspond to a trivial SPT phase. The latter phenomenon only occurs for $d\geq 7$, and the simplest group is $G=\mathbb{Z}_3\times \mathbb{Z}_3$.
 
-## Inline Math
+In this note we give a physical explanation of the minimal example with $G=\mathbb{Z}_3\times \mathbb{Z}_3$ in $d=7$.
 
-The energy of a quantum state is $E = \hbar \omega (n + \frac{1}{2})$.
+The group-cohomology classification can be easily found by the Künneth formula:
 
-## Display Math
+$$\mathcal{H}^7(\mathbb{Z}_3\times \mathbb{Z}_3, \mathrm{U}(1))=\mathbb{Z}_3^3.$$
 
-The partition function is given by:
+One of the $\mathbb{Z}_3$ factor is given by $\mathcal{H}^2(\mathbb{Z}_3, \mathcal{H}^5(\mathbb{Z}_3,\mathrm{U}(1)))$.
 
-$$Z = \sum_{n=0}^{\infty} e^{-\beta E_n} = \frac{1}{2\sinh(\beta\hbar\omega/2)}$$
+The different factors can be understood using decorated domain wall construction, a physical interpretation of the Atiyah-Hirzebruch spectral sequence (AHSS) for cobordism. Let us review the general theory.
 
-## Adding New Notes
+The $E_2$ page consists of
 
-To create a new note, add a Markdown file in `_posts/` with the filename format `YYYY-MM-DD-title.md`. Include the front matter block above (between `---` lines) with your own title, date, permalink, and tags.
+$$E_2^{p,q}=\mathcal{H}^p(G, \Omega^{\rm SO}_q(A)),$$
+
+where $p+q=d$.
+
+The groups of invertible phases in low dimensions
+
+$$\begin{aligned}
+    \Omega^{\rm SO}_1 &=\mathbb{Z}_1,\\ \Omega^{\rm SO}_2 &=\mathbb{Z}_1,\\ \Omega^{\rm SO}_3&=\mathbb{Z},\\
+    \Omega^{\rm SO}_4&=\mathbb{Z}_1,\\
+    \Omega^{\rm SO}_5&=\mathbb{Z}_2.
+\end{aligned}$$
+
+For group-cohomology SPT, the $E_2$ page
+
+$$E_2^{p,q}=\mathcal{H}^p(G, \mathcal{H}^q(A, \mathrm{U}(1))),$$
+
+Now we compute $\mathcal{H}^2(\mathbb{Z}_3, \Omega^{\rm SO}_5(\mathbb{Z}_3))$.
+
+First, we need to find $\Omega^{\rm SO}_5(\mathbb{Z}_3)$. We again use the AHSS. The nontrivial terms on the $E_2$ page has
+
+$$\mathcal{H}^2(\mathbb{Z}_3, \Omega^{\rm SO}_3)=\mathcal{H}^2(\mathbb{Z}_3, \mathbb{Z})=\mathbb{Z}_3, \quad \mathcal{H}^5(\mathbb{Z}_3, \mathrm{U}(1))=\mathbb{Z}_3.$$
+
+The first term is the "beyond group-cohomology" SPTs. One can show that the $E_2$ page already converges to $E_\infty$, but interestingly, in this case there is nontrivial extension:
+
+$$1\rightarrow \mathcal{H}^5(\mathbb{Z}_3, \mathrm{U}(1))\rightarrow \Omega^{\rm SO}_5(\mathbb{Z}_3)\rightarrow\mathcal{H}^2(\mathbb{Z}_3, \Omega^{\rm SO}_3)\rightarrow 1.$$
+
+Therefore $\Omega^{\rm SO}_5(\mathbb{Z}_3)=\mathbb{Z}_9$. In plain words, stacking three copies of the nontrivial "beyond cohomology" SPTs yields a nontrivial "within cohomology" SPT.
+
+Using this fact, we can now compute the $E_2^{2,5}$ for $\Omega^{\rm SO}_7(\mathbb{Z}_3^2)$:
+
+$$\mathcal{H}^2(\mathbb{Z}_3, \Omega_5^{\rm SO}(\mathbb{Z}_3)) = \mathcal{H}^2(\mathbb{Z}_3, \mathbb{Z}_9\times \mathbb{Z}_2) = \mathcal{H}^2(\mathbb{Z}_3, \mathbb{Z}_9)=\mathbb{Z}_3.$$
+
+It is instructive to write down the cocycles explicitly. Denote the elements of $\mathbb{Z}_3$ by $a\in\{0,1,2\}$, and the generator of $\Omega^{\rm SO}_5(\mathbb{Z}_3')$ by $x$. Then the 2-cocycle can be written as
+
+$$\omega(a,b)=x^{n\frac{a+b-[a+b]_3}{3}}.$$
+
+where we can take $n=0,1,2$. If $n=3$, $x^3$ is the generator of the group-cohomology SPTs, and $\omega(a,b)$ is a coboundary.
