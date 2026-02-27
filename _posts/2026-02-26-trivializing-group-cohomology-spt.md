@@ -1,7 +1,7 @@
 ---
 title: "Trivializing group cohomology SPT phases"
 date: 2026-02-26
-permalink: /posts/2026/02/template-note/
+permalink: /posts/2026/02/trivializing-group-cohomology-spt/
 tags:
   - template
   - math
