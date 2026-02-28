@@ -3,7 +3,6 @@ title: "Trivializing group cohomology SPT phases"
 date: 2026-02-26
 permalink: /posts/2026/02/trivializing-group-cohomology-spt/
 tags:
-  - template
   - math
 ---
 
@@ -18,7 +17,7 @@ $$E_2^{p,q}=\mathcal{H}^p(G, h^q(BA)),$$
 
 where $p,q$ are non-negative integers and $p+q=d$.
 
-For the computation of $h^d(BG)$, we can just set $A=1$. The relevant groups of invertible phases in low dimensions up to $d=5$:
+For the computation of $h^d(BG)$, we can just set $A=\mathbb{Z}_1$. The relevant groups of invertible phases in low dimensions up to $d=5$:
 
 $$\begin{aligned}
     h^1 &=\mathbb{Z}_1,\\ h^2 &=\mathbb{Z}_1,\\ h^3&=\mathbb{Z},\\
