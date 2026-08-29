@@ -39,7 +39,9 @@ plugins:
   - jekyll-redirect-from
 
 # Content
-permalink: /:categories/:title/
+# Notes land at /posts/YYYY/MM/slug/ from the filename date, so a post needs
+# no permalink of its own. An explicit front-matter permalink still wins.
+permalink: /posts/:year/:month/:title/
 
 collections:
   talks:
