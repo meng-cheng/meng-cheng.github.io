@@ -1,0 +1,23 @@
+{% assign a = site.author %}
+<aside class="sidebar" itemscope itemtype="https://schema.org/Person">
+  {% if a.avatar %}
+    <div class="author__avatar">
+      <img src="{{ a.avatar | prepend: '/images/' | relative_url }}" alt="{{ a.name }}">
+    </div>
+  {% endif %}
+  <div class="author__content">
+    <h3 class="author__name" itemprop="name">{{ a.name }}</h3>
+    {% if a.bio %}<p class="author__bio" itemprop="description">{{ a.bio }}</p>{% endif %}
+  </div>
+  <ul class="author__urls">
+    {% if a.location %}
+      <li>{% include icon.html name="location" %} <span itemprop="homeLocation">{{ a.location }}</span></li>
+    {% endif %}
+    {% if a.email %}
+      <li><a href="mailto:{{ a.email }}">{% include icon.html name="email" %} Email</a></li>
+    {% endif %}
+    {% if a.googlescholar %}
+      <li><a href="{{ a.googlescholar }}">{% include icon.html name="scholar" %} Google Scholar</a></li>
+    {% endif %}
+  </ul>
+</aside>

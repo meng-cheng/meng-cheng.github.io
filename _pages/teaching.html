@@ -1,8 +1,12 @@
 ---
-layout: archive
-title: "Teaching"
+layout: page
 permalink: /teaching/
-author_profile: true
+title: "Teaching"
 ---
 
-
+{% for item in site.teaching %}
+  <div class="archive__item">
+    <h3 class="archive__item-title"><a href="{{ item.url | relative_url }}">{{ item.title }}</a></h3>
+    <p class="archive__item-meta">{{ item.type }}, {{ item.venue }}, {{ item.date | date: "%Y" }}</p>
+  </div>
+{% endfor %}

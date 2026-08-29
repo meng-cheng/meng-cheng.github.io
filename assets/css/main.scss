@@ -1,41 +1,259 @@
 ---
+# Front matter tells Jekyll to process this file with Sass.
 ---
 
-/*
- *    Minimal Mistakes Jekyll Theme
- *
- *  - Michael Rose
- *  - mademistakes.com
- *  - https://twitter.com/mmistakes
- *
-*/
+// Tokens lifted from the compiled Minimal Mistakes stylesheet this replaces,
+// so the rebuilt site keeps the appearance of the original.
+$sans        : -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto",
+               "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
+$serif       : Georgia, Times, serif;
+$mono        : Monaco, Consolas, "Lucida Console", monospace;
 
-@import "vendor/breakpoint/breakpoint"; // media query mixins
-@import "variables";
-@import "mixins";
-@import "vendor/susy/susy";
+$text        : #494e52;   // mix(#000, #7a8288, 40%)
+$gray        : #7a8288;
+$gray-hover  : #5c6266;  // mix(#000, #7a8288, 25%)
+$muted       : #9ba1a6;
+$border      : #f2f3f3;
+$rule        : #bdc1c4;
+$background  : #fff;
+$link        : #52adc8;
+$link-hover  : #3e8296;
+$code-bg     : #fafafa;
 
-@import "reset";
-@import "base";
+$measure     : 925px;   // #main max-width
+$measure-wide: 1280px;  // ...at >= 80em
+$bp-text     : 48em;      // 768px  - base font 16 -> 18px
+$bp-cols     : 57.8125em; // 925px  - single column -> sidebar + content
+$bp-wide     : 80em;      // 1280px - wider container
 
-@import "utilities";
-@import "animations";
-@import "tables";
-@import "buttons";
-@import "notices";
-@import "masthead";
-@import "navigation";
-@import "footer";
-@import "syntax";
+// Susy proportions from the original grid
+$col-sidebar : 15.2542372881%;
+$col-content : 83.0508474576%;
+$col-gutter  : 1.6949152542%;
 
-@import "forms";
+/* ---------- reset ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+body, h1, h2, h3, h4, p, ul, ol, figure, blockquote { margin: 0; }
+img { max-width: 100%; height: auto; }
 
-@import "page";
-@import "archive";
-@import "sidebar";
+/* ---------- base ---------- */
+html {
+  font-size: 16px;
+  @media (min-width: $bp-text) { font-size: 18px; }
+}
 
-@import "vendor/font-awesome/fontawesome";
-@import "vendor/font-awesome/solid";
-@import "vendor/font-awesome/brands";
-@import "vendor/magnific-popup/magnific-popup";
-@import "print";
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: $sans;
+  line-height: 1.5;
+  color: $text;
+  background-color: $background;
+  -webkit-text-size-adjust: 100%;
+}
+
+a { color: $link; text-decoration: none;
+  &:hover { color: $link-hover; text-decoration: underline; }
+}
+
+code, pre { font-family: $mono; font-size: 0.8em; }
+code { padding: 0.15em 0.3em; background: $code-bg; border: 1px solid $border; border-radius: 3px; }
+pre { padding: 1em; overflow-x: auto; background: $code-bg; border: 1px solid $border;
+  code { padding: 0; background: none; border: 0; }
+}
+
+blockquote { margin: 2em 0; padding-left: 1em; border-left: 4px solid $border; font-family: $serif; font-style: italic; }
+hr { border: 0; border-top: 1px solid $border; margin: 2em 0; }
+
+/* ---------- masthead ---------- */
+.masthead {
+  position: relative;
+  border-bottom: 1px solid $border;
+  z-index: 20;
+}
+
+.masthead__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  max-width: $measure;
+  margin: 0 auto;
+  padding: 1em;
+  @media (min-width: $bp-wide) { max-width: $measure-wide; }
+}
+
+.masthead__title {
+  padding-right: 2em;
+  margin-right: 1rem;
+  font-weight: 700;
+  color: $gray;
+  &:hover { color: $gray-hover; text-decoration: none; }
+}
+
+.masthead__menu {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  a {
+    display: block;
+    margin: 0 1rem;
+    padding: 0.5rem 0;
+    color: $gray;
+    white-space: nowrap;
+    &:hover { color: $gray-hover; text-decoration: none; }
+  }
+}
+
+/* ---------- layout ---------- */
+#main {
+  flex: 1 0 auto;
+  width: 100%;
+  max-width: $measure;
+  margin: 2em auto 0;
+  padding: 0 1em;
+  @media (min-width: $bp-wide) { max-width: $measure-wide; }
+
+  @media (min-width: $bp-cols) {
+    display: grid;
+    grid-template-columns: $col-sidebar $col-content;
+    column-gap: $col-gutter;
+    align-items: start;
+  }
+}
+
+.content {
+  min-width: 0;  // let long equations scroll instead of stretching the grid
+
+  @media (min-width: $bp-cols) {
+    padding-left: 5.1019%;
+    padding-right: 20.4076%;
+  }
+}
+
+/* ---------- sidebar ---------- */
+.sidebar {
+  margin-bottom: 2em;
+
+  @media (min-width: $bp-cols) {
+    position: sticky;
+    top: 2em;
+    margin-bottom: 0;
+  }
+}
+
+.author__avatar img {
+  width: 100%;
+  max-width: 175px;
+  padding: 5px;
+  border: 1px solid $border;
+  border-radius: 50%;
+}
+
+// Below the two-column breakpoint the original collapses the card to a
+// compact 36px thumbnail with the name and bio beside it.
+@media (max-width: $bp-cols - 0.0625em) {
+  .sidebar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .author__avatar     { width: 36px; margin-right: 10px; }
+  .author__avatar img { width: 36px; padding: 2px; }
+  .author__content    { flex: 1 1 0; min-width: 0; }
+  .author__name       { margin: 0; }
+  .author__bio        { margin: 0; }
+  .author__urls       { flex-basis: 100%; margin-top: 10px; }
+}
+
+.author__name { margin: 10px 0; font-family: $sans; font-size: 1em; }
+.author__bio  { margin: 10px 0 20px; font-size: 0.75em; }
+
+.author__urls {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.75em;
+
+  li { padding: 5px 0; }
+  a { color: inherit; &:hover { color: $link-hover; } }
+}
+
+.icon { vertical-align: -0.15em; margin-right: 0.25em; }
+
+/* ---------- page ---------- */
+.page__title {
+  margin-top: 0;
+  font-family: $sans;
+  font-size: 1.563em;
+  line-height: 1;
+}
+
+.page__meta,
+.page__date {
+  margin: 0.5em 0;
+  font-family: $sans;
+  font-size: 0.75em;
+  color: $muted;
+}
+
+.page__content {
+  margin-top: 1.5em;
+
+  h2 {
+    margin: 1.5em 0 0.5em;
+    padding-bottom: 0.5em;
+    font-size: 1.563em;
+    border-bottom: 1px solid $border;
+  }
+  h3 { margin: 1.5em 0 0.5em; font-size: 1.25em; }
+  h4 { margin: 1.5em 0 0.5em; font-size: 1em; }
+
+  p, li, dl { font-size: 1em; }
+  p, ul, ol, dl { margin-bottom: 1.3em; }
+  ul, ol { padding-left: 1.3em; }
+  li { margin-bottom: 0.4em; }
+}
+
+/* Long display equations scroll rather than widening the page. */
+mjx-container[display="true"] { overflow-x: auto; overflow-y: hidden; padding: 0.25em 0; }
+
+/* ---------- archive lists (Notes, Talks) ---------- */
+.archive__item { margin-bottom: 1.5em; }
+.archive__item-title { margin: 0 0 0.25em; font-size: 1.25em; font-weight: 700;
+  a { color: $text; &:hover { color: $link-hover; } }
+}
+.archive__item-meta { margin: 0; font-size: 0.75em; color: $muted; }
+.archive__subtitle {
+  margin: 1.5em 0 0.75em;
+  padding-bottom: 0.5em;
+  font-size: 1.25em;
+  border-bottom: 1px solid $border;
+}
+
+/* ---------- footer ---------- */
+.page__footer {
+  flex-shrink: 0;
+  width: 100%;
+  margin-top: 3em;
+  color: $muted;
+  background-color: $border;
+  border-top: 1px solid $rule;
+
+  a { color: inherit; &:hover { color: $link-hover; } }
+}
+
+.footer__inner {
+  max-width: $measure;
+  margin: 0 auto;
+  padding: 2em 1em;
+  @media (min-width: $bp-wide) { max-width: $measure-wide; }
+}
+
+.footer__follow    { margin-bottom: 0.5em; font-size: 0.75em; font-weight: 700; text-transform: uppercase; }
+.footer__copyright { font-size: 0.6875em; }

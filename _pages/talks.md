@@ -1,8 +1,6 @@
 ---
-layout: archive
 title: "Talks"
 permalink: /talks/
-author_profile: true
 ---
 
 ### Recordings of recent talks
