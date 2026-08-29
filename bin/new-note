@@ -5,6 +5,9 @@
 # derived from the filename by _config.yml, so no permalink is needed.
 set -euo pipefail
 
+# Work from the repo root, so the script runs from any directory.
+cd "$(dirname "${BASH_SOURCE[0]}")/.."
+
 [ $# -ge 1 ] || { echo 'usage: bin/new-note "Note title"' >&2; exit 1; }
 
 title="$*"
