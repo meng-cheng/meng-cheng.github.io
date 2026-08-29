@@ -1,0 +1,34 @@
+#!/usr/bin/env bash
+# Create a new note:  bin/new-note "Anomalies in tensor gauge theories"
+#
+# Writes _posts/YYYY-MM-DD-slug.md with front matter filled in. The URL is
+# derived from the filename by _config.yml, so no permalink is needed.
+set -euo pipefail
+
+[ $# -ge 1 ] || { echo 'usage: bin/new-note "Note title"' >&2; exit 1; }
+
+title="$*"
+date=$(date +%F)
+
+# slug: drop $…$ math, lowercase, collapse everything else to hyphens
+slug=$(printf '%s' "$title" | tr '[:upper:]' '[:lower:]' \
+  | sed -E 's/\$[^$]*\$/ /g; s/[^a-z0-9]+/-/g; s/^-+|-+$//g')
+
+[ -n "$slug" ] || { echo "title has no usable characters for a slug" >&2; exit 1; }
+
+file="_posts/${date}-${slug}.md"
+[ -e "$file" ] && { echo "already exists: $file" >&2; exit 1; }
+
+# Single-quoted YAML: backslashes are literal, so LaTeX in a title survives.
+# The only escape inside single quotes is '' for a literal apostrophe.
+esc_title=$(printf '%s' "$title" | sed "s/'/''/g")
+printf -- "---\ntitle: '%s'\ndate: %s\ntags:\n  - math\n---\n\n" \
+  "$esc_title" "$date" > "$file"
+
+echo "$file"
+
+# Open it for editing. Honours $EDITOR if you set one, otherwise vim.
+# Skipped when stdout is not a terminal, so the script stays pipeable.
+if [ -t 1 ]; then
+  exec "${EDITOR:-vim}" "$file"
+fi
