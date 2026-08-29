@@ -21,11 +21,15 @@ Local and CI use the same `Gemfile`, so what you see locally is what deploys.
 ```yaml
 ---
 title: "..."
-date: 2026-02-26
-permalink: /posts/2026/02/slug/
+date: 2026-09-14
 tags: [math]
 ---
 ```
+
+No `permalink` needed: `_config.yml` sets `/posts/:year/:month/:title/`, so the
+URL follows the filename date. (The first note carries an explicit `permalink`
+from before that pattern existed — an explicit one always wins, which is what
+keeps its published URL stable. Leave it be.)
 
 MathJax 3 loads automatically on posts (`math: true` is a default in
 `_config.yml`); add `math: true` to any other page's front matter to opt in.
