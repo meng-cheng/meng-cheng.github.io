@@ -11,7 +11,12 @@
         inlineMath: [['$', '$'], ['\\(', '\\)']],
         displayMath: [['$$', '$$'], ['\\[', '\\]']],
         processEscapes: true,
-        tags: 'ams'
+        tags: 'ams',
+        macros: {
+          Z:  '\\mathcal{Z}',
+          bZ: '\\mathbb{Z}',
+          U:  '\\mathrm{U}(1)'
+        }
       },
       options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'] }
     };
