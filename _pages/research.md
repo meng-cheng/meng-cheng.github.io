@@ -9,7 +9,7 @@ Physical systems are never in isolation. We investigate many-body physics in ope
 
 ### Defects at quantum critical points
 
-Defects are ubiquitous in physical systems. We are particularly interested in extended operators as defects in spacetime, including disorder operators that measure symmetry charges localized in a spatial region, and Rényi entanglement entropies for subsystems. Their scaling behavior reveals new universal quantities for quantum criticality.
+Extended operators probe quantum many-body systems in ways local observables cannot. We study disorder operators, which measure the symmetry charge in a spatial region, and Rényi entanglement entropies of subsystems — both realized as defects in spacetime. Their scaling behavior reveals new universal quantities characterizing quantum phases.
 
 ### Fractonic phases
 
