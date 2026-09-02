@@ -19,7 +19,7 @@ To understand what is going on, we do not need to know the full details of the g
 
 $$ s\times s = 1+b_1+b_2+b_3$$
 
-$s$ has quantum dimension $d_s=2$, and is invariant under fusion with any $b_i$. Since it has trivial braiding with $b_i$'s, this whole subcategory survives the condensation. Then applying rule 3 naively would mean that $s$ should split into 4 lines, each with quantum dimension $1/2$, which is clearly possible.
+$s$ has quantum dimension $d_s=2$, and is invariant under fusion with any $b_i$. Since it has trivial braiding with $b_i$'s, this whole subcategory survives the condensation. Then applying rule 3 naively would mean that $s$ should split into 4 lines, each with quantum dimension $1/2$, which is clearly impossible.
 
 *To be continued.*
 
