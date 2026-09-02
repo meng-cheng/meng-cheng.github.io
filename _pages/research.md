@@ -5,7 +5,7 @@ title: "Research"
 
 ### Mixed-state phases
 
-### Extended observables and defects at quantum criticalities
+### Defects at quantum critical points
 
 ### Fractonic phases
 
