@@ -44,9 +44,6 @@ plugins:
 permalink: /posts/:year/:month/:title/
 
 collections:
-  talks:
-    output: true
-    permalink: /:collection/:path/
   teaching:
     output: true
     permalink: /:collection/:path/
@@ -56,7 +53,5 @@ defaults:
     values: {layout: post, math: true}
   - scope: {path: "", type: pages}
     values: {layout: page}
-  - scope: {path: "", type: talks}
-    values: {layout: talk}
   - scope: {path: "", type: teaching}
     values: {layout: page}

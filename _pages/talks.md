@@ -1,6 +1,9 @@
 ---
 title: "Talks"
 permalink: /talks/
+redirect_from:
+  - /talks/2024-07-mixed-state
+  - /talks/2024-scgp-stabilizer-codes
 ---
 
 ### Recordings of recent talks
