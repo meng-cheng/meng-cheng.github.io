@@ -13,13 +13,21 @@ tags:
 
 I recently encountered an example where naively applying the rules, especially rule 3, leads to incorrect results (there is no problem with rules 1 and 2). The upshot is that if the condensed bosons form a cyclic group under fusion, then the procedure can be safely applied. Otherwise the procedure does not always work.
 
-The example can be described in several different ways. Most compactly, it is the TQFT of the $\mathrm{Spin}(8)_{-2}$ Chern-Simons theory. To understand the source of the problem, it is more useful to think of it as the $\bZ_2\times \bZ_2$ orbifold of ${\rm SU}(2)_1$. Here "orbifold" means gauging a zero-form symmetry. ${\rm SU}(2)_1$ has a single nontrivial line, which is the semion line. The $\bZ_2\times \bZ_2$ symmetry fractionalizes, in such a way that the semion carries the two-dimensional projective representation. Gauging this symmetry leads to our example. This description is slightly ambiguous, as we have not specified what Dijkgraaf-Witten term is used, but that does not affect the discussion.
+The example can be described in several ways. Most compactly, it is the TQFT of the $\mathrm{Spin}(8)_{-2}$ Chern-Simons theory. To understand the source of the problem, it is more useful to think of it as the $\bZ_2\times \bZ_2$ orbifold of ${\rm SU}(2)_1$. Here "orbifold" means gauging a zero-form symmetry. ${\rm SU}(2)_1$ has a single nontrivial line, which is the semion line. The $\bZ_2\times \bZ_2$ symmetry fractionalizes, in such a way that the semion carries the two-dimensional projective representation. Gauging this symmetry leads to our example. This description is slightly ambiguous, as we have not specified which Dijkgraaf-Witten term is used, but that does not affect the discussion.
 
-To understand what is going on, we do not need to know the full details of the gauged theory (or $\mathrm{Spin}(8)_{-2}$). All we need to know is the following subcategory of lines, which is isomorphic to ${\rm Rep}(Q_8)$ as fusion category. Let us denote the lines in this subcategory by $1, b_1, b_2, b_3$ and $s$. $b_1$ and $b_2$ are Abelian bosons, which generate the $\bZ_2\times \bZ_2$ group that can be condensed, $s$ is a non-Abelian anyon with quantum dimension 2. The most important fusion rules are:
+To understand what is going on, we do not need to know the full details of the gauged theory (or $\mathrm{Spin}(8)_{-2}$). All we need is the following subcategory of lines, which is isomorphic to ${\rm Rep}(Q_8)$ as a fusion category. Let us denote the lines in this subcategory by $1, b_1, b_2, b_3$ and $s$. $b_1, b_2$ and $b_3$ are Abelian bosons, which generate the $\bZ_2\times \bZ_2$ group that can be condensed. $s$ is a non-Abelian anyon with quantum dimension 2. The most important fusion rule is:
 
-$$ s\times s = 1+b_1+b_2+b_3$$
+$$ s\times s = 1+b_1+b_2+b_3.$$
 
 $s$ has quantum dimension $d_s=2$, and is invariant under fusion with any $b_i$. Since it has trivial braiding with $b_i$'s, this whole subcategory survives the condensation. Then applying rule 3 naively would mean that $s$ should split into 4 lines, each with quantum dimension $1/2$, which is clearly impossible.
+
+The reason that the "splitting" rule fails becomes clearer if we reverse the gauging. In general, gauging an (invertible) one-form symmetry ${\cal A}^{(1)}$ in a TQFT $\mathcal{T}$ leads to a new theory $\mathcal{T}'$, which has a dual zero-form symmetry ${\cal A}^{(0)}$. Gauging ${\cal A}^{(0)}$ in ${\cal T}'$ (with appropriate Dijkgraaf-Witten terms) restores $\mathcal{T}$. This is completely general and applies to non-topological quantum field theories as well. 
+
+In our example, $\mathcal{T}'$ is the semion TQFT, or ${\rm SU}(2)_1$. It is enriched by the dual $\bZ_2^2$ zero-form symmetry, in such a way that the semion carries the two-dimensional projective representation of $\bZ_2^2$. This is an example of "symmetry fractionalization". Hence after gauging the zero-form $\bZ_2^2$, the semion is promoted to a non-Abelian anyon with $d=2$, which is the anyon $s$. So the condensation/one-form gauging does not split the non-Abelian $s$. $s$ simply turns into an Abelian anyon. 
+
+On the other hand, a zero-form symmetry can act on a TQFT by permuting anyon types. Then after gauging, the orbit of anyon types under the permutation action is promoted to a single anyon with a larger quantum dimension (more precisely, the orbit is a direct sum). The reverse gauging/condensation splits this "orbit" anyon back into the members of the orbit. This is precisely rule 3.
+
+This perspective also explains why rule 3 always works if the group of condensed bosons/the one-form symmetry is cyclic: in the dual theory, the dual zero-form symmetry does not have multi-dimensional irreducible projective representations. Thus the kind of mechanism that makes rule 3 fail in our example never occurs.
 
 *To be continued.*
 
