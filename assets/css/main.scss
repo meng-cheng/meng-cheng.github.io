@@ -59,6 +59,12 @@ a { color: $link; text-decoration: none;
   &:hover { color: $link-hover; text-decoration: underline; }
 }
 
+a:focus-visible {
+  outline: 2px solid $link;
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
 code, pre { font-family: $mono; font-size: 0.8em; }
 code { padding: 0.15em 0.3em; background: $code-bg; border: 1px solid $border; border-radius: 3px; }
 pre { padding: 1em; overflow-x: auto; background: $code-bg; border: 1px solid $border;
@@ -171,7 +177,7 @@ hr { border: 0; border-top: 1px solid $border; margin: 2em 0; }
   .author__urls       { flex-basis: 100%; margin-top: 10px; }
 }
 
-.author__name { margin: 10px 0; font-family: $sans; font-size: 1em; }
+.author__name { margin: 10px 0; font-family: $sans; font-size: 1em; font-weight: 700; }
 .author__bio  { margin: 10px 0 20px; font-size: 0.75em; }
 
 .author__urls {
@@ -257,3 +263,33 @@ mjx-container[display="true"] { overflow-x: auto; overflow-y: hidden; padding: 0
 
 .footer__follow    { margin-bottom: 0.5em; font-size: 0.75em; font-weight: 700; text-transform: uppercase; }
 .footer__copyright { font-size: 0.6875em; }
+
+/* ---------- print ----------
+   Notes get printed and saved as PDFs, so drop the site chrome and let the
+   content run full width. Replaces the theme's old _print.scss.            */
+@media print {
+  .masthead,
+  .sidebar,
+  .page__footer { display: none; }
+
+  body { font-size: 11pt; line-height: 1.45; color: #000; background: #fff; }
+
+  #main {
+    display: block;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+  }
+  .content { padding: 0; }
+
+  a { color: inherit; text-decoration: underline; }
+  /* a printed page can't be clicked — spell out external targets */
+  .page__content a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 9pt;
+    word-break: break-all;
+  }
+
+  h1, h2, h3 { page-break-after: avoid; }
+  mjx-container[display="true"] { page-break-inside: avoid; }
+}
