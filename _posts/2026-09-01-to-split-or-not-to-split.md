@@ -29,6 +29,8 @@ On the other hand, a zero-form symmetry can act on a TQFT by permuting anyon typ
 
 This perspective also explains why rule 3 always works if the group of condensed bosons/the one-form symmetry is cyclic: in the dual theory, the dual zero-form symmetry does not have multi-dimensional irreducible projective representations. Thus the kind of mechanism that makes rule 3 fail in our example never occurs.
 
+How does this example fit into the mathematical theory of anyon condensation? In general, given a 3d TQFT $\mathcal{T}$ (as a modular tensor category) and an etale (or "condensable") algebra $A$ in $\mathcal{T}$, the objects of the new theory are local $A$-modules in $\mathcal{T}$. Equivalently, they are "ambichiral" $A-A$-bimodules in $\mathcal{T}$.
+
 *To be continued.*
 
 

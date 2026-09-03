@@ -11,10 +11,12 @@ Physical systems are never in isolation. We investigate many-body physics in ope
 
 Extended operators probe quantum many-body systems in ways local observables cannot. We study disorder operators, which measure the symmetry charge in a spatial region, and Rényi entanglement entropies of subsystems — both realized as [defects in spacetime](https://arxiv.org/abs/2605.00104). Their scaling behavior reveals new universal quantities characterizing global structures of quantum states, in [topological phases](https://arxiv.org/abs/2203.08847), quantum [critical](https://arxiv.org/abs/2101.10358) [points](https://arxiv.org/abs/2107.06305) and [thermal states](https://arxiv.org/abs/2401.09548).
 
+### Symmetry and anomaly in topological phases
+
+*Under construction.*
+
 ### Fractonic phases
 
 *Under construction.*
 
-### Symmetry and anomaly in topological phases
 
-*Under construction.*
